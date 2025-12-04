@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Overflow Handling Box</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            
+        }
+
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+            padding: 10px;
+            margin-bottom: 25px;
+            background-color: white;
+        }
+
+
+        #visible-box {
+            overflow: visible;  /* (Content extends outside the box )*/
+        }
+
+        #hidden-box {
+            overflow: hidden;  /*( Extra content is cut off )*/
+        }
+
+     
+        #scroll-box {
+            overflow: scroll;   /*  (Always shows scrollbars even if text fits.)*/
+        }
+
+        #auto-box {
+            overflow: auto;    /* (Shows scrollbar only when needed.) */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Overflow Handling Demonstration</h1>
+
+    <h2>1. Overflow: Visible</h2>
+    <div class="box" id="visible-box">
+        Bangladesh, located on the delta of the Ganges, Brahmaputra, and Meghna rivers,
+        is relatively less prone to frequent earthquakes compared to some neighboring countries. 
+        However, it is still vulnerable due to its proximity to the active Himalayan seismic belt.
+        Historical records show occasional moderate earthquakes, especially in the northeastern and southeastern regions. 
+        Earthquake preparedness is limited, and the high population density in urban areas like Dhaka.
+    </div>
+
+    <h2>2. Overflow: Hidden</h2>
+    <div class="box" id="hidden-box">
+       India is highly susceptible to earthquakes because it lies on the boundary of the Indian Plate and the Eurasian Plate. 
+       Northern India, especially states like Jammu & Kashmir, Himachal Pradesh, and Uttarakhand, 
+       experiences frequent seismic activity due to the Himalayan collision zone. T
+       he eastern and northeastern states, including Assam and Sikkim, are also highly vulnerable. 
+       Earthquakes in India have historically caused massive damage to infrastructure and loss of life, 
+       highlighting the need for strong disaster management systems.
+    </div>
+
+    <h2>3. Overflow: Scroll</h2>
+    <div class="box" id="scroll-box">
+      Pakistan is situated in a seismically active region because of the collision between the Indian Plate and 
+      the Eurasian Plate. Areas such as Balochistan and northern Pakistan, including the regions near Islamabad 
+      and Kashmir, are especially prone to earthquakes. Major earthquakes in Pakistan's history, like the 2005 Kashmir earthquake,
+     have caused thousands of deaths and extensive destruction. Urban planning and infrastructure development are critical in reducing the risks associated with seismic events.
+    </div>
+
+    <h2>4. Overflow: Auto</h2>
+    <div class="box" id="auto-box">
+       Japan is one of the most earthquake-prone countries in the world due to its location on the Pacific 
+       Ring of Fire, where multiple tectonic plates meet. The country experiences frequent tremors,
+       from minor earthquakes to massive ones like the 2011 Tohoku earthquake and tsunami. Japan has developed advanced 
+       earthquake-resistant infrastructure, early warning systems, and strict building codes to minimize casualties and damage. The nation
+        serves as a global example of how preparedness and technology can reduce the impact of natural disasters.
+    </div>
+
+</body>
+</html>

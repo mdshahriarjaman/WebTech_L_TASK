@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University Admission Form</title>
+</head>
+<body>
+    <center> 
+    <h1>University Admission Form</h1>
+    </center>
+    <form>
+        <fieldset>
+            <legend><b>Personal Information</b></legend>
+  
+             <label for="fullname">Full Name:</label><br>
+            <input type="text" id=fullname name="fullname" required maxlength="30"><br><br>
+
+       <label for="fathername">Father's Name:</label><br>
+             <input type="text" id="fathername" name="fathername" required maxlength="30"><br><br>
+            <label for="mothername">Mother's Name:</label><br>
+            <input type="text" id="mothername" name="mothername" required maxlength="30"><br><br>
+              <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" required maxlength="50"><br><br>
+             
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="date">Date of Birth:</label><br>
+             <input type="date" id="date" name="dob" required><br><br>
+
+            <label for="gender">Gender:</label><br>
+             <input type="radio" id="Male" name="gender" value="Male" required> Male
+             <input type="radio" id="Female"  name="gender" value="Female"> Female<br><br>
+
+            <label>Interests:</label><br>
+            <input type="checkbox" name="interest" value="Programming"> Programming<br>
+             <input type="checkbox" name="interest" value="Sports"> Sports<br>
+            <input type="checkbox" name="interest" value="Music"> Music<br>
+            <input type="checkbox" name="interest" value="Games"> Games<br><br>
+
+        </fieldset><br>
+
+   
+        <fieldset>
+            <legend><b>Academic Information</b></legend>
+
+            <label>SSC Result:</label><br>
+             <input type="text" name="ssc_gpa" required maxlength="5"><br><br>
+
+             <label>HSC Result:</label><br>
+            <input type="text" name="hsc_gpa" required maxlength="5"><br><br>
+
+            <label>Preferred Department:</label><br>
+            <select name="department" required>
+                <option value=""> Select Department  </option>
+                 <option value="CSE">Computer Science & Engineering</option>
+                  <option value="EEE">Electrical & Electronics Engineering</option>
+                 <option value="English">English Literature</option>
+                <option value="BBA">Bachelor of Business Administration</option>
+               
+            </select>
+            <br><br>
+
+            <label>Upload Documents transcripts and Others :</label><br>
+            <input type="file" id="documents" name="documents" required><br><br>
+
+        </fieldset><br>
+
+      
+        <input type="submit" id="submit" value="Submit">
+        <input type="reset" id="reset" value="Reset">
+
+    </form>
+
+</body>
+</html>

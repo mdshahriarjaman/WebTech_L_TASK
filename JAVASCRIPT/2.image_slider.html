@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slider</title>
+</head>
+<body>
+
+    <h2>Travel Destination Slider</h2>
+    <img id="slider" width="600" height="400">
+
+    <br><br>
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+
+    <script>
+
+        let images = [
+           "img/dhaka.png",
+           "img/khulna.png",
+           "img/sylhet.png",
+            "img/srimongol.png",
+            "img/cox's bazar.png"
+        ];
+
+        let index = 0;
+        document.getElementById("slider").src = images[index];
+        function nextImage() {
+            index++;
+            if (index >= images.length) {
+                index = 0;
+            }
+            document.getElementById("slider").src = images[index];
+        }
+
+        function prevImage() {
+            index--;
+            if (index < 0) {
+                index = images.length - 1;
+            }
+            document.getElementById("slider").src = images[index];
+        }
+
+        setInterval(nextImage, 3000);
+    </script>
+
+</body>
+</html>

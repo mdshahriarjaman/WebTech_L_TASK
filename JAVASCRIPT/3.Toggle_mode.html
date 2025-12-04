@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dark / Light Mode Toggle</title>
+</head>
+<body id="body">
+
+    <header id="header" style="padding:20px; text-align:center; font-size:24px;">
+        My Portfolio
+    </header>
+
+    <div style="text-align:center; margin:20px;">
+        <button id="toggleBtn" onclick="toggleTheme()">Switch to Dark Mode</button>
+    </div>
+
+    <section id="content" style="padding:20px; width:70%; margin:auto;">
+        <h2>Welcome!</h2>
+        <p>
+          Hello! I am MD.SHAHRIAR JAMAN . I am a Computer Science student . 
+                I am passionate about web development, programming, and solving real-world problems.
+        </p>
+    </section>
+
+    <footer id="footer" style="padding:20px; text-align:center; margin-top:20px;">
+           My Portfolio 2025
+    </footer>
+
+    <script>
+    
+        let isDark = false;
+
+        function toggleTheme() {
+
+            const body = document.getElementById("body");
+            const header = document.getElementById("header");
+            const content = document.getElementById("content");
+            const footer = document.getElementById("footer");
+            const btn = document.getElementById("toggleBtn");
+
+            if (!isDark) {
+               
+                body.style.backgroundColor = "black";
+                body.style.color = "white";
+
+                header.style.backgroundColor = "gray";
+                content.style.backgroundColor = "tomato";
+                footer.style.backgroundColor = "gray";
+
+                btn.innerText = "Switch to Light Mode";
+                isDark = true;
+
+            } else {
+              
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+
+                header.style.backgroundColor = "green";
+                content.style.backgroundColor = "cyan";
+                footer.style.backgroundColor = "green";
+
+                btn.innerText = "Switch to Dark Mode";
+                isDark = false;
+            }
+        }
+    </script>
+
+</body>
+</html>
