@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Portfolio</title>
+
+    <script>
+       
+        let darkMode = false;
+        function toggleTheme() {
+            if (!darkMode) {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                darkMode = true;
+            } else {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                darkMode = false;
+            }
+        }
+
+     function updateGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+            let greetingText = "";
+
+            if (hour < 12) {
+                greetingText = "Good Morning!";
+            } else if (hour < 18) {
+                greetingText = "Good Afternoon!";
+            } else {
+                greetingText = "Good Evening!";
+            }
+
+            document.getElementById("greeting").innerText = greetingText;
+        }
+        setInterval(updateGreeting, 1000);
+        updateGreeting();
+ 
+        function showSection(sectionId) {
+            const sections = ["about", "projects", "contact"];
+            sections.forEach(id => {
+                document.getElementById(id).style.display = (id === sectionId) ? "block" : "none";
+            });
+        }
+
+        function validateForm() {
+            let valid = true;
+            const name = document.getElementById("name").value.trim();
+            if (name === "") {
+                document.getElementById("nameError").innerText = "Name cannot be empty";
+                valid = false;
+            } else {
+                document.getElementById("nameError").innerText = "";
+            }
+
+            const email = document.getElementById("email").value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerText = "Enter a valid email";
+                valid = false;
+            } else {
+                document.getElementById("emailError").innerText = "";
+            }
+
+            const message = document.getElementById("message").value.trim();
+            if (message.length < 10) {
+                document.getElementById("messageError").innerText = "Message must be at least 10 characters";
+                valid = false;
+            } else {
+                document.getElementById("messageError").innerText = "";
+            }
+
+            return valid;
+        }
+    </script>
+</head>
+<body>
+
+ 
+    <button onclick="toggleTheme()">Toggle Dark/Light Mode</button>
+
+    <h2 id="greeting"></h2>
+   
+    <nav>
+        <button onclick="showSection('about')">About</button>
+        <button onclick="showSection('projects')">Projects</button>
+        <button onclick="showSection('contact')">Contact</button>
+    </nav>
+
+    <hr>
+
+  
+    <div id="about">
+        <h3>About Me</h3>
+        <p>Hello! I'm MD.SHAHRIAR JAMAN.I am a Computer Science and Engineering student . 
+                I am passionate about programming, web development, and solving real-world problems. </p>
+    </div>
+
+    <div id="projects" style="display: none;">
+        <h3>Projects</h3>
+        <ul>
+            <li>Waste management system</li>
+            <li>Inventory management system</li>
+            <li>Game Development Project</li>
+        </ul>
+    </div>
+
+    <div id="contact" style="display: none;">
+        <h3>Contact Me</h3>
+        <form id="contactForm" onsubmit="return validateForm()">
+            <label>Name:</label><br>
+            <input type="text" id="name"><br>
+            <span id="nameError" style="color:red"></span><br>
+
+            <label>Email:</label><br>
+            <input type="text" id="email"><br>
+            <span id="emailError" style="color:red"></span><br>
+
+            <label>Message:</label><br>
+            <textarea id="message"></textarea><br>
+            <span id="messageError" style="color:red"></span><br><br>
+
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    
+
+</body>
+</html>

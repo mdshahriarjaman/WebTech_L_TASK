@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Form Field Display</title>
+
+
+     <script>
+        function updateFields() {
+            let type = document.getElementById("userType").value;
+
+            if (type === "student") {
+                document.getElementById("rollField").style.display = "block";
+                document.getElementById("deptField").style.display = "none";
+            } 
+            else if (type === "teacher") {
+                document.getElementById("deptField").style.display = "block";
+                document.getElementById("rollField").style.display = "none";
+            } 
+            else {
+             
+                document.getElementById("rollField").style.display = "none";
+                document.getElementById("deptField").style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h3>Smart Registration Form</h3>
+
+    <label>Select User Type:</label>
+    <select id="userType" onchange="updateFields()">
+        <option value=""> Select </option>
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+    </select>
+
+    <br><br>
+
+    <div id="rollField" style="display: none;">
+        <label>Roll Number:</label>
+        <input type="text" id="roll">
+    </div>
+
+    <br>
+
+    <div id="deptField" style="display: none;">
+        <label>Department:</label>
+        <input type="text" id="department">
+    </div>
+
+   
+
+</body>
+</html>

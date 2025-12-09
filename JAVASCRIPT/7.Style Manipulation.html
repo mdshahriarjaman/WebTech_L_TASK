@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Manipulation</title>
+
+     <script>
+        let fontSize = 12; 
+
+        function changeBg() {
+            document.getElementById("text").style.backgroundColor =
+        document.getElementById("text").style.backgroundColor === "green" ? "red": "green";
+        }
+
+        function increaseFont() {
+            fontSize += 2;
+            document.getElementById("text").style.fontSize = fontSize + "px";
+        }
+
+        function centerText() {
+            document.getElementById("text").style.textAlign = "center";
+        }
+
+        function resetStyle() {
+            fontSize = 16;
+            let p = document.getElementById("text");
+            p.style.backgroundColor = "";
+             p.style.fontSize = "";
+            p.style.textAlign = "";
+        }
+    </script>
+</head>
+<body>
+
+    <p id="text">bangladesh is a beautiful country.i love my country </p>
+
+    <button onclick="changeBg()">Change Background Color</button>
+    <button onclick="increaseFont()">Increase Font Size</button>
+    <button onclick="centerText()">Center Text</button>
+    <button onclick="resetStyle()">Reset Style</button>
+
+   
+
+</body>
+</html>
